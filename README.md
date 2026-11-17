@@ -21,7 +21,7 @@ Classify Sentinel-1/2 image patches into the 19 BigEarthNet land-cover classes (
 
 Test metrics cover all 189,275 patches of the BigEarthNet v2 test split, including those flagged for cloud, shadow or snow. See [MODEL_CARD.md](MODEL_CARD.md) for per-class results, how they were obtained, and limitations.
 
-**Release:** [GitHub v1.0.0](https://github.com/alalbiol/sentinel-landcover-inference/releases/tag/v1.0.0). **EOTDL model:** [`sentinel-landcover-inference`](https://www.eotdl.com/models/sentinel-landcover-inference); its version is recorded in `provenance/releases/` after upload.
+**Released asset:** [GitHub v1.0.0](https://github.com/alalbiol/sentinel-landcover-inference/releases/tag/v1.0.0) corresponds to **[EOTDL model version 1](https://www.eotdl.com/models/sentinel-landcover-inference)**. The exact source commit is `0448949b4e7a53812baaa5784076b19cff2ca52e`. All 40 uploaded payload files were verified against this commit. See [the release record](provenance/releases/v1.0.0.json) for the model ID and manifest checksum.
 
 | | GitHub | EOTDL snapshot |
 |---|---|---|

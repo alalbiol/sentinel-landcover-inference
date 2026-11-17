@@ -1,0 +1,13 @@
+{
+  "model_name": "sentinel-landcover-inference",
+  "model_id": "6afc583c062699a6ad0c5b85",
+  "eotdl_version": 1,
+  "github_commit": "0448949b4e7a53812baaa5784076b19cff2ca52e",
+  "github_tag": "v1.0.0",
+  "manifest_sha256": "bcf8ac3938690f74694418675916519b1210f2327358cdca7f1006d535074222",
+  "payload_files": 40,
+  "github_release_url": "https://github.com/alalbiol/sentinel-landcover-inference/releases/tag/v1.0.0",
+  "eotdl_url": "https://www.eotdl.com/models/sentinel-landcover-inference",
+  "verified_date": "2026-11-17",
+  "verification": "EOTDL catalog SHA-1 of every uploaded file matched the snapshot built from github_commit; the uploaded release-manifest.json is byte-identical"
+}

@@ -7,11 +7,9 @@ reference metrics. The snapshot is the complete tagged Git tree **plus**:
 - `checkpoints/`: three inference-only weight files (1.39 GB);
 - `evaluation/predictions/`: per-patch test predictions for each model (56 MB).
 
-## GitHub and EOTDL version mapping
+## Published version
 
-GitHub release `v1.0.0` identifies the code. The EOTDL version number is assigned on
-upload and is not derived from the Git tag. After upload, record it in
-`provenance/releases/v1.0.0.json` and the README.
+GitHub release `v1.0.0` (commit `0448949b4e7a53812baaa5784076b19cff2ca52e`) corresponds to EOTDL model version **1** (ID `6afc583c062699a6ad0c5b85`). The EOTDL catalog checksum of every one of the 40 payload files, and the uploaded `release-manifest.json` itself, were checked against the snapshot built from that commit. See `provenance/releases/v1.0.0.json`. Changes on `main` after this tag are not part of the upload; a new upload creates a new EOTDL version.
 
 ## Build the snapshot
 
