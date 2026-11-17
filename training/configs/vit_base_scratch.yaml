@@ -1,0 +1,63 @@
+# Configuration of the released vit_base model: TerraFM-B architecture trained from random
+# initialisation with mean S1/S2 fusion. Taken from AI4DIS use_case_2/configs/from_scratch.yaml,
+# the most likely configuration given the checkpoint (no pretrained weights, mean fusion,
+# best epoch 14 of a 100-epoch schedule); not confirmed by a run record. fusion_type made
+# explicit (the original relied on the default, mean); paths and logging changed.
+# Configuration for training TerraFM from scratch on BigEarthNet
+
+# Experiment name
+experiment_name: "terrafm-from-scratch"
+
+# Model parameters
+model:
+  type: "base"  # "base" or "large"
+  num_classes: 19
+  pretrained_path: null  # No pretrained weights
+  freeze_backbone: false
+  freeze_epochs: 0
+  dropout: 0.1
+  fusion_type: "mean"
+
+# Data parameters
+data:
+  data_dirs:
+    images_lmdb: "/path/to/BigEarthNet/Encoded-BigEarthNet"
+    metadata_parquet: "/path/to/BigEarthNet/metadata.parquet"
+    metadata_snow_cloud_parquet: "/path/to/BigEarthNet/metadata_for_patches_with_snow_cloud_or_shadow.parquet"
+  band_combination: "ALL"  # Options: 'ALL', 'S1', 'S2', 'S1_10m_20m', etc.
+  img_size: [224, 224]
+  batch_size: 32
+  num_workers: 4
+
+# Training parameters
+training:
+  num_epochs: 100
+  learning_rate: 3.0e-4  # Higher LR for scratch training
+  weight_decay: 0.05
+  optimizer: "adamw"  # "adamw" or "sgd"
+  scheduler: "cosine"  # "cosine", "step", or null
+  warmup_epochs: 10  # Longer warmup for scratch
+  gradient_clip: 1.0
+  mixed_precision: true
+  label_smoothing: 0.1  # Label smoothing helps generalization
+
+# Data augmentation (more aggressive for scratch training)
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+  rotation_degrees: 15
+
+# Checkpointing
+checkpoint:
+  save_dir: "checkpoints_scratch"
+  save_freq: 10  # Save every 10 epochs
+
+# Weights & Biases logging
+wandb:
+  enabled: false   # the original runs logged to Weights & Biases
+  project: "bigearthnet"
+  entity: null  # Set to your wandb username/team
+  run_name: "train-from-scratch"
+
+# Other
+seed: 42

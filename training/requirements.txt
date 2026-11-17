@@ -1,0 +1,9 @@
+# Training only (GPU recommended). Versions from the original AI4DIS environment.
+configilm==0.7.1
+lmdb==1.7.5
+safetensors==0.7.0
+torchvision
+pyyaml
+scikit-learn
+tqdm
+# optional: wandb

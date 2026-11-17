@@ -1,0 +1,82 @@
+{
+  "models": [
+    {
+      "model_id": "terrafm_early",
+      "filename": "terrafm_early_fusion.pt",
+      "bytes": 484973990,
+      "sha256": "b97884a22ea18b861f3c09cd819cac2ae776254272c93e1e317414f97fd56118",
+      "parameters": 121229587,
+      "source": {
+        "filename": "TerraFM_EarlyFusion.pth",
+        "bytes": 1332164514,
+        "sha256": "5a7c585e66752364360d54f21c6c4197b87cc85eec670c11650012d86c8d7bdc",
+        "epoch_index": 8,
+        "validation_metrics": {
+          "train_loss": 0.13460351898664905,
+          "loss": 0.16348038087370806,
+          "ap_macro": 0.7758219757175177,
+          "ap_micro": 0.866749307219765,
+          "f1_macro": 0.6970884594261367,
+          "f1_micro": 0.7692225836216516
+        },
+        "dropped_top_level_keys": [
+          "epoch",
+          "optimizer_state_dict",
+          "metrics"
+        ]
+      }
+    },
+    {
+      "model_id": "terrafm_concat",
+      "filename": "terrafm_late_fusion_concat.pt",
+      "bytes": 451990041,
+      "sha256": "7a71119bd1b649492c87dc7fbace15acce6bb4daefa7038be6a154bb6e269c09",
+      "parameters": 112983571,
+      "source": {
+        "filename": "TerraFM_LateFusion_Concat.pth",
+        "bytes": 1299347816,
+        "sha256": "7e666c86f41fb84eb30e6d8d4d22f37e5d48a0dc3772d5430952b6ad93d7a833",
+        "epoch_index": 6,
+        "validation_metrics": {
+          "train_loss": 0.1337292937911147,
+          "loss": 0.15780097277805571,
+          "ap_macro": 0.7996216441735363,
+          "ap_micro": 0.8764102752368049,
+          "f1_macro": 0.7152598532898937,
+          "f1_micro": 0.7753598391837775
+        },
+        "dropped_top_level_keys": [
+          "epoch",
+          "optimizer_state_dict",
+          "metrics"
+        ]
+      }
+    },
+    {
+      "model_id": "vit_base",
+      "filename": "vit_base_scratch.pt",
+      "bytes": 451923725,
+      "sha256": "5ad59d2455da3ea8b91ea06f717c98f8fbeb49fb2097f7e4c5a4bf6283f5996d",
+      "parameters": 112967443,
+      "source": {
+        "filename": "ViT_base.pth",
+        "bytes": 1299154472,
+        "sha256": "909fdb54dd52418e48ac4b24195104403395b5e4b86ffb0154fde0999ac706cb",
+        "epoch_index": 13,
+        "validation_metrics": {
+          "train_loss": 0.2890732515025017,
+          "loss": 0.31027194658863244,
+          "ap_macro": 0.7599032865005738,
+          "ap_micro": 0.855677729981619,
+          "f1_macro": 0.6859034828091297,
+          "f1_micro": 0.7598893192508289
+        },
+        "dropped_top_level_keys": [
+          "epoch",
+          "optimizer_state_dict",
+          "metrics"
+        ]
+      }
+    }
+  ]
+}

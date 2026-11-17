@@ -1,0 +1,19 @@
+{
+  "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+  "packages": {
+    "torch": "2.10.0",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8",
+    "pandas": "2.3.3",
+    "geopandas": "1.1.3",
+    "pyogrio": "0.12.1",
+    "rasterio": "1.4.4",
+    "pyproj": "3.7.2",
+    "shapely": "2.1.2",
+    "earthengine-api": "1.7.29",
+    "transformers": "5.14.1",
+    "requests": "2.34.2"
+  }
+}

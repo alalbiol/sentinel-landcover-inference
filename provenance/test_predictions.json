@@ -1,0 +1,34 @@
+{
+  "test_set": {
+    "file": "test_set.csv",
+    "sha256": "8d93453fc2cf635d326dcc10e0a86e3187a0ac178b8520a1b305d5f280b64782",
+    "patches": 189275,
+    "released_sha256": "e9955512486841a9e35d49473d500e307901b51f651369b0e81026b5da4bd804"
+  },
+  "predictions": {
+    "terrafm_early": {
+      "source": "terrafm_earlyfusion_test_predictions.csv",
+      "source_sha256": "cc1ab7328dac3c7f2a735f9f12fd48f3f9269e9c08c0e7cd032b03ee976d915b",
+      "rows": 189275,
+      "released": "evaluation/predictions/terrafm_early_test.csv.gz",
+      "released_bytes": 19472339,
+      "released_sha256": "ebf67848c40096c5b792e8c48bb368717d92d53b35978b41b9bd5f5d9eec49fa"
+    },
+    "terrafm_concat": {
+      "source": "terrafm_concat_test_predictions.csv",
+      "source_sha256": "fac9d81e46819d3e2c3c56eacb4be900471d79b00c55b53d7546d5a009c21028",
+      "rows": 189275,
+      "released": "evaluation/predictions/terrafm_concat_test.csv.gz",
+      "released_bytes": 19307326,
+      "released_sha256": "f8f618eb953d298d30acda2cc91c44ddcf51dbd234f0767ad90b179db7318616"
+    },
+    "vit_base": {
+      "source": "vit_base_preds.csv",
+      "source_sha256": "1590bcf6b0e048b9d6c1179fd4551c65945790e7134b36739b9d94ed575aba03",
+      "rows": 189275,
+      "released": "evaluation/predictions/vit_base_test.csv.gz",
+      "released_bytes": 17725995,
+      "released_sha256": "0ceb8f287494f83ab98158e40f58ea7e5a4aee65eb20e293f6183c52369ab477"
+    }
+  }
+}

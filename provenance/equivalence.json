@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-17",
+  "check": "Release code vs original AI4DIS ESA_inference_script.py + EarthObservationClassifier + original checkpoints",
+  "preprocessing": {
+    "input": "synthetic GeoTIFF patch in BigEarthNet layout (120/60/20 px bands)",
+    "identical_tensor": true
+  },
+  "models": {
+    "terrafm_early": {
+      "original_fusion_setting": "early",
+      "original_missing_keys": [],
+      "original_unexpected_keys": [],
+      "max_abs_probability_difference": 0.0
+    },
+    "terrafm_concat": {
+      "original_fusion_setting": "concat",
+      "original_missing_keys": [
+        "backbone.patch_embed.s1_s2_embed",
+        "backbone.patch_embed.conv2d_s1_s2.weight",
+        "backbone.patch_embed.conv2d_s1_s2.bias"
+      ],
+      "original_unexpected_keys": [],
+      "max_abs_probability_difference": 0.0
+    },
+    "vit_base": {
+      "original_fusion_setting": "conv",
+      "original_missing_keys": [
+        "backbone.patch_embed.s1_s2_embed",
+        "backbone.patch_embed.conv2d_s1_s2.weight",
+        "backbone.patch_embed.conv2d_s1_s2.bias"
+      ],
+      "original_unexpected_keys": [],
+      "max_abs_probability_difference": 0.0
+    }
+  },
+  "test_metrics": {
+    "check": "scripts/evaluate.py on the released predictions vs the test metrics in the AI4DIS ESA deliverable, computed from the original prediction files",
+    "max_abs_difference": 3.3306690738754696e-16,
+    "metrics": [
+      "ap_macro",
+      "ap_micro",
+      "f1_macro",
+      "f1_micro",
+      "auc_macro",
+      "auc_micro"
+    ]
+  }
+}

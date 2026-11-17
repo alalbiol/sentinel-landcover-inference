@@ -1,0 +1,4 @@
+# Python 3.11 (tested 3.11.15). CPU-only machines: install torch from the PyTorch CPU index first.
+numpy==2.4.6
+torch==2.10.0
+rasterio==1.4.4

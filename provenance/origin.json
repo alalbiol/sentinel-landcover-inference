@@ -1,0 +1,26 @@
+{
+  "training_code": "training/train.py (AI4DIS use_case_2/train.py trimmed to TerraFM-B; provided as used, not re-run)",
+  "data": "BigEarthNet v2 via ConfigILM 0.7.1 (band set ALL: VV, VH, B01-B12), 19 classes",
+  "models": {
+    "terrafm_early": {
+      "config": "training/configs/terrafm_early_fusion.yaml",
+      "source_config": "use_case_2/configs/finetune_terrafm_early_fusion.yaml",
+      "initialisation": "TerraFM-B",
+      "epoch_index": 8
+    },
+    "terrafm_concat": {
+      "config": "training/configs/terrafm_concat.yaml",
+      "source_config": "use_case_2/configs/terrafm_finetune_concat.yaml",
+      "initialisation": "TerraFM-B",
+      "epoch_index": 6
+    },
+    "vit_base": {
+      "config": "training/configs/vit_base_scratch.yaml",
+      "source_config": "use_case_2/configs/from_scratch.yaml (inferred; no run record)",
+      "initialisation": "random",
+      "epoch_index": 13,
+      "evidence": "checkpoint has no early-fusion embedding and a 768-d head (mean fusion); validation metrics and epoch index consistent with a from-scratch run"
+    }
+  },
+  "excluded": "DINOv3 ViT-L/16 model (DinoV3_BigEarthNet.pth): not used in any AI4DIS publication; its weights are under the separate DINOv3 licence"
+}

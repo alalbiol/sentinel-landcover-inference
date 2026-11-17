@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+*.part
+*.pth
+outputs/
+downloads/
+dist/
+# Distributed only in the EOTDL model snapshot.
+checkpoints/
+evaluation/predictions/

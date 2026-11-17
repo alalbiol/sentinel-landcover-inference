@@ -1,0 +1,60 @@
+# Configuration of the released terrafm_concat model (TerraFM-B, late fusion by concatenation).
+# Unchanged from AI4DIS use_case_2/configs/terrafm_finetune_concat.yaml except paths and logging.
+# Configuration for fine-tuning TerraFM on BigEarthNet with pretrained weights
+
+# Experiment name
+experiment_name: "terrafm-finetune"
+
+# Model parameters
+model:
+  type: "base"  # "base" or "large"
+  num_classes: 19
+  pretrained_path: "/path/to/TerraFM-B.pth"   # public TerraFM-B weights
+  freeze_backbone: true
+  freeze_epochs: 5  # Unfreeze after this many epochs
+  dropout: 0.1
+  fusion_type: "concat"  # "mean" or "concat"
+
+# Data parameters
+data:
+  data_dirs:
+    images_lmdb: "/path/to/BigEarthNet/Encoded-BigEarthNet"
+    metadata_parquet: "/path/to/BigEarthNet/metadata.parquet"
+    metadata_snow_cloud_parquet: "/path/to/BigEarthNet/metadata_for_patches_with_snow_cloud_or_shadow.parquet"
+  band_combination: "ALL"  # Options: 'ALL', 'S1', 'S2', 'S1_10m_20m', etc.
+  img_size: [224, 224]
+  batch_size: 32
+  num_workers: 4
+
+# Training parameters
+training:
+  num_epochs: 10
+  learning_rate: 1.0e-4
+  weight_decay: 0.05
+  optimizer: "adamw"  # "adamw" or "sgd"
+  scheduler: "cosine"  # "cosine", "step", or null
+  warmup_epochs: 5
+  gradient_clip: 1.0
+  mixed_precision: true
+  label_smoothing: 0.0  # 0.0 to disable
+
+# Data augmentation
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+  rotation_degrees: 0  # 0 to disable
+
+# Checkpointing
+checkpoint:
+  save_dir: "checkpoints"
+  save_freq: 5  # Save every N epochs
+
+# Weights & Biases logging
+wandb:
+  enabled: false   # the original runs logged to Weights & Biases
+  project: "bigearthnet"
+  entity: null  # Set to your wandb username/team
+  run_name: null  # Auto-generated if null
+
+# Other
+seed: 42
