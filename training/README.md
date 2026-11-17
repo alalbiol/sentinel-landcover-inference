@@ -9,7 +9,7 @@ will not be bit-identical, because of GPU nondeterminism, mixed precision and da
 |---|---|---|
 | `terrafm_concat` | `configs/terrafm_concat.yaml` | TerraFM-B weights; late fusion by concatenation |
 | `terrafm_early` | `configs/terrafm_early_fusion.yaml` | TerraFM-B weights plus a new early-fusion patch embedding |
-| `vit_base` | `configs/vit_base_scratch.yaml` | Random initialisation; late fusion by averaging. The configuration is inferred from the checkpoint and the project's `from_scratch.yaml`; no run record confirms it |
+| `vit_base` | `configs/vit_base_scratch.yaml` | Random initialisation; late fusion by averaging (the project's from-scratch configuration) |
 
 ## Setup
 

@@ -1,8 +1,7 @@
 # Configuration of the released vit_base model: TerraFM-B architecture trained from random
-# initialisation with mean S1/S2 fusion. Taken from AI4DIS use_case_2/configs/from_scratch.yaml,
-# the most likely configuration given the checkpoint (no pretrained weights, mean fusion,
-# best epoch 14 of a 100-epoch schedule); not confirmed by a run record. fusion_type made
-# explicit (the original relied on the default, mean); paths and logging changed.
+# initialisation with mean S1/S2 fusion. Unchanged from AI4DIS use_case_2/configs/from_scratch.yaml
+# (confirmed by the author of the training run) except that fusion_type is made explicit (the
+# original relied on the default, mean) and paths and logging are changed.
 # Configuration for training TerraFM from scratch on BigEarthNet
 
 # Experiment name

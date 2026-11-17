@@ -14,7 +14,7 @@ All three share the TerraFM-B architecture (ViT-B/16, 12 blocks, 768-d, 224 × 2
 | `terrafm_early` | All 14 bands through one new early-fusion patch embedding | TerraFM-B | 10 epochs, backbone frozen for the first 5 except the new embedding | 9th | 0.776 / 0.867 |
 | `vit_base` | As concat, but the class tokens are averaged (768-d) | Random | From scratch; 100-epoch schedule, label smoothing 0.1, rotation augmentation | 14th | 0.760 / 0.856 |
 
-Common settings: BigEarthNet v2 via ConfigILM, all 14 bands, AdamW with cosine schedule and warm-up, BCE loss, horizontal/vertical flips, mixed precision, batch 32. The checkpoint with the best validation macro AP was kept. Full configurations are in `training/configs/`. The `vit_base` configuration is inferred from the checkpoint (no pretrained weights, mean fusion) and the project's `from_scratch.yaml`; no run record confirms it.
+Common settings: BigEarthNet v2 via ConfigILM, all 14 bands, AdamW with cosine schedule and warm-up, BCE loss, horizontal/vertical flips, mixed precision, batch 32. The checkpoint with the best validation macro AP was kept. Full configurations are in `training/configs/`. `vit_base` used the project's from-scratch configuration.
 
 The released files contain the model tensors only, copied unchanged from the original training checkpoints, which also held the optimiser state (`provenance/checkpoints.json`).
 

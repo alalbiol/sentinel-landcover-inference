@@ -16,10 +16,10 @@
     },
     "vit_base": {
       "config": "training/configs/vit_base_scratch.yaml",
-      "source_config": "use_case_2/configs/from_scratch.yaml (inferred; no run record)",
+      "source_config": "use_case_2/configs/from_scratch.yaml",
       "initialisation": "random",
       "epoch_index": 13,
-      "evidence": "checkpoint has no early-fusion embedding and a 768-d head (mean fusion); validation metrics and epoch index consistent with a from-scratch run"
+      "evidence": "confirmed by the author of the training run (17 November 2026); consistent with the checkpoint (no early-fusion embedding, 768-d head for mean fusion)"
     }
   },
   "excluded": "DINOv3 ViT-L/16 model (DinoV3_BigEarthNet.pth): not used in any AI4DIS publication; its weights are under the separate DINOv3 licence"
